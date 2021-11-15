@@ -142,6 +142,13 @@ router.post('/zama-shop/admin/change-sponsored-category-post', (req, res) => {
     adminUserScript.changeCategorySponsoredPost(req, res);
 });
 
+router.get('/zama-shop/admin/user-sms', (req, res) => {
+    adminUserScript.GetUserSmsPage(req, res);
+});
+router.post('/zama-shop/admin/send-user-sms', (req, res) => {
+    adminUserScript.CreateUserSms(req, res);
+});
+
 
 module.exports = router;
 
