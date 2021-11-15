@@ -720,6 +720,39 @@ module.exports = {
 
   },
 
+GetUserSmsPage: async function (req, res) {
+    if (req.session && req.session.user && req.session.user.u_name) {
+    const userData = await axios.get("http://localhost:3003/users");
+    res.render('admin/user-sms',{
+      userData:userData.data,
+        user: {
+          u_name: req.session.user.u_name
+        }
+      });
+    } else {
+      res.redirect('/zama-shop/login');
+    }
+  },
+  CreateUserSms: async function (req, res) {
+    let idGen = await Math.floor(11000 + Math.random() * 19000);
+    var id = idGen;
+    var to = req.body.to;
+    var subject = req.body.subject;
+    var phone = req.body.phone;
+    var message = req.body.message;
+    console.log(to)
+    console.log(subject)
+    console.log(message)
+    const userSms = await axios.post("http://localhost:3003/sendsms", {
+      id: id,
+      to:to,
+      phone:phone,
+      subject:subject,
+      message:message
+    });
+    res.redirect('/zama-shop/admin/user-sms');
+  },
+
 
 
 
