@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ZamaShops Admin Dashboard</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="/css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="/css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      
+   </head>
+   <body>
+      <!-- loader Start -->
+      
+      <!-- loader END -->
+      <!-- Wrapper Start -->
+      <div class="wrapper">
+         <!-- Sidebar  -->
+          <%- include('../partials/admin_sidebar') %>
+         <!-- TOP Nav Bar -->
+        <%- include('../partials/admin_header') %>
+         
+      </div>   
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+      <div id="content-page" class="content-page">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="iq-card">
+                     <div class="iq-card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="todo-date d-flex mr-3">Total Active  Users</div>
+                           <div class="todo-notification d-flex align-items-center">
+                              <div class=" position-relative d-flex align-items-center mr-5">
+                                 <form>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" name="search-user" placeholder="Search By Name...!">
+                                       <input type="submit" class="btn btn-default border ml-2" value="Search">
+                                    </div>
+                                 </form>
+                                 <span class="bg-danger text-white"></span></div>  
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+          <% activeUser.forEach(function(act){ %>
+                  <div class="col-lg-4">
+                     <div class="card iq-mb-3">
+                        <img src="/images/page-img/07.jpg" class="card-img-top" alt="#"> 
+                        <div class="card-body">
+                           <h4 class="card-title"><%= act.name %></h4>
+                           <li style="list-style-type: none;">Email : <b><%= act.email %></b></li>
+                           <li style="list-style-type: none;">Password : <b>*****************</b></li>
+                           <li style="list-style-type: none;">Location : <b><%= act.location %></b></li>
+                           <div class="mt-4">
+                             <a href="single-user-details.html" class="card-link btn btn-info ">All Posts</a>
+                             <a href="/zama-shop/admin/block-user/<%= act.id %>" class="card-link btn btn-dark ">Block</a>
+
+                             <a href="/zama-shop/admin//delete/user/<%= act.id %>" class="card-link btn btn-danger ">Delete</a>
+                              <spin class=" btn btn-success  border  btn-block mt-2">
+                              <a href="/zama-shop/admin/all-active-user/<%= act.id %>" style="color: white">Active</a>
+                            </spin>
+                            
+
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                 <% }); %>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Wrapper END -->
+      <!-- Footer -->
+      <%- include('../partials/admin_footer') %>
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="/js/lottie.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="/js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+   </body>
+</html>

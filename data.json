@@ -1,0 +1,84 @@
+{
+  "adminuser": [
+    {
+      "fullName": "Abdul Wahab",
+      "contactNumber": "00987654321",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "image": "images/user/09.jpg"
+    }
+  ],
+  "city": [
+    {
+      "id": 17846,
+      "cityname": "mingora swat"
+    }
+  ],
+  "categories": [
+    {
+      "id": 11,
+      "category": "mobile"
+    },
+    {
+      "id": 25003,
+      "category": "watch"
+    }
+  ],
+  "subCategories": [
+    {
+      "id": "11",
+      "subCategory": "iphone",
+      "category": "mobile"
+    },
+    {
+      "id": 28154,
+      "category": "watch",
+      "subCategory": "caso"
+    }
+  ],
+  "users": [
+    {
+      "id": "33154",
+      "name": "khan",
+      "email": "user@gmail.com",
+      "password": "user11",
+      "location": "islamabad",
+      "following": 90,
+      "followers": 92,
+      "active": "Active",
+      "block": "Block"
+    }
+  ],
+  "posts": [
+    {
+      "id": "53154",
+      "title": "Iphone 12 ",
+      "price": "1234560",
+      "category": "watch",
+      "subCategory": "casu",
+      "location": "peshawar",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "uploadDate": "2021-10-30",
+      "expiryDate": "2021-10-30",
+      "active": "Active",
+      "status": "Approved",
+      "status2": "Pending",
+      "sponsored": "Go Normal"
+    },
+    {
+      "id": "2253154",
+      "title": "Iphone 12 pro mix ",
+      "price": "4560",
+      "category": "phone",
+      "subCategory": "Iphone",
+      "location": "peshawar",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "uploadDate": "2021-10-30",
+      "expiryDate": "2021-10-30",
+      "active": "Active",
+      "status": "Approved",
+      "status2": "Pending",
+      "sponsored": "Go to Sponsored"
+    }
+  ]
+}

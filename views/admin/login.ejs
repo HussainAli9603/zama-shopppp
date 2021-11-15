@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<style>
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  #full {
+    margin: 223px;
+  }
+</style>
+
+<body>
+
+  <div id="full">
+    <h4>Zama Shop</h4>
+      <% if(errors){ %>
+    <div class="alert alert-danger" style="background-color: wheat;">
+     <%= errors %>
+    </div>
+    <% } %>
+    <br>
+    <form action="/zama-shop/logins" method="post">
+      <label for="fname">Email</label>
+      <input type="text" id="fname" name="email" placeholder="Your Email..">
+
+      <label for="lname">Password</label>
+      <input type="password" id="lname" name="password" placeholder="Your Password..">
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+
+</html>

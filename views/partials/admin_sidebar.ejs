@@ -1,0 +1,164 @@
+<!-- Sidebar  -->
+<div class="iq-sidebar">
+   <div class="iq-sidebar-logo d-flex justify-content-between">
+      <a href="index.html">
+         <!-- <img src="images/" class="img-fluid" alt=""> -->
+         <span style="text-shadow: 4px 4px 2px rgb(207, 210, 250); color:blue">ZamaShops</span>
+      </a>
+      <div class="iq-menu-bt align-self-center">
+         <div class="wrapper-menu">
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
+         </div>
+      </div>
+   </div>
+   <div id="sidebar-scrollbar">
+      <nav class="iq-sidebar-menu">
+         <ul id="iq-sidebar-toggle" class="iq-menu">
+            <li class="iq-menu-title"><i class="ri-separator"></i><span>Dashboard</span></li>
+            <li class="active">
+               <a href="#dashboard" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="ri-home-4-line"></i><span>Menu</span></a>
+               <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+            </li>
+            <hr>
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>Users Posts</span></li>
+            <li>
+               <a href="#normal" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="fa fa-sticky-note-o"></i><span>Normal Posts</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="normal" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/normal-post">Total Normal Posts</a></li>
+               </ul>
+            </li>
+
+
+            <li>
+               <a href="#sponsored" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="fa fa-star"></i><span>Sponsored Posts</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="sponsored" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/all/sponsored/post">Total Sponsored Posts</a></li>
+
+               </ul>
+
+
+            <li>
+               <a href="#pending-normal" class="iq-waves-effect collapsed" data-toggle="collapse"
+                  aria-expanded="false"><i class="fa fa-info-circle"></i><span>Pending Normal Posts</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="pending-normal" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/pending-normal-post">Pending Normal Posts</a></li>
+
+               </ul>
+            </li>
+
+            <li>
+               <a href="#pending-sponsored" class="iq-waves-effect collapsed" data-toggle="collapse"
+                  aria-expanded="false"><i class="fa fa-info-circle"></i><span>Pending Sponsored Posts</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="pending-sponsored" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/pending-sponsored-post">Pending Sponsored Posts</a></li>
+
+               </ul>
+            </li>
+            <hr>
+
+
+
+            <!-- <li class="iq-menu-title"><i class="fa fa-users"></i><span>My Posts</span></li>                    
+                     <li>
+                        <a href="#my-post" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="ri-pencil-ruler-line"></i><span>Total Posts</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="my-post" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="ui-colors.html">Posts</a></li>
+                          
+                        </ul>
+                     </li> -->
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>All Banners Upload</span></li>
+            <li>
+               <a href="#Banners-Upload" class="iq-waves-effect collapsed" data-toggle="collapse"
+                  aria-expanded="false"><i class="fa fa-list-ul"></i><span>Banners Upload</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="Banners-Upload" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="app-banners">App Banners</a></li>
+                  <li><a href="web-banners">Web Banners</a></li>
+               </ul>
+            </li>
+            <hr>
+
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>Pakistan Citys</span></li>
+            <li>
+               <a href="#all-citys" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="ri-pencil-ruler-line"></i><span>All Citys</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="all-citys" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/city">All Citys</a></li>
+               </ul>
+            </li>
+            <hr>
+
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>Users</span></li>
+            <li>
+               <a href="#total-user" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="ri-pencil-ruler-line"></i><span>Total Users</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="total-user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/all-user">All Users</a></li>
+                  <li><a href="/zama-shop/admin/all-block-user">Block Users</a></li>
+               </ul>
+            </li>
+            <hr>
+
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>Categories</span></li>
+            <li>
+               <a href="#Categories" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="fa fa-list-ul"></i><span>Categories</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="Categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="/zama-shop/admin/category">Main Categories</a></li>
+                  <li><a href="/zama-shop/admin/sub-category">sub-Categories</a></li>
+               </ul>
+            </li>
+            <hr>
+
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>Email</span></li>
+            <li>
+               <a href="#email" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="fa fa-envelope"></i><span>Total Users Email</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="email" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="all-emails.html">All Emails</a></li>
+               </ul>
+            </li>
+
+            <li>
+
+               <ul id="email" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="user-email.html">Send Email</a></li>
+               </ul>
+            </li>
+            <hr>
+
+
+            <li class="iq-menu-title"><i class="fa fa-users"></i><span>SMS</span></li>
+            <li>
+               <a href="#sms" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
+                     class="fa fa-envelope"></i><span>Send SMS To Users</span><i
+                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+               <ul id="sms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  <li><a href="user-sms.html">Send SMS</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <span class="p-5"><span>
+            <div class="p-3"></div>
+   </div>
+</div>

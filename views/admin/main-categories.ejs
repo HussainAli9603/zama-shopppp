@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ZamaShops Admin Dashboard</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="/css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="/css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      
+   </head>
+   <body>
+      <!-- loader Start -->
+      
+      <!-- loader END -->
+      <!-- Wrapper Start -->
+      <div class="wrapper">
+         <!-- Sidebar  -->
+        <%- include('../partials/admin_sidebar') %>
+         <!-- TOP Nav Bar -->
+        <%- include('../partials/admin_header') %>
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+          <div id="content-page" class="content-page">
+            <div class="container-fluid">
+         <form action="/zama-shop/admin/category/add" method="post">
+           <div class="row">
+             <div class="col">
+               <input type="text" class="form-control" name="category" placeholder="Enter category name">
+             </div>
+             <div class="col">
+              <input type="submit" class="btn btn-primary" value="submit">
+             </div>
+           </div>
+         </form>
+<br><br>
+         <div>
+            
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Category Name</th>
+                  <th scope="col">Action</th>
+               </tr>
+              </thead>
+              <tbody>
+               <% var sr = 1; newCategory.forEach(function(cat){ %>
+                <tr>
+                  <th scope="row"><%= sr %></th>
+                  <td><%= cat.category %></td>
+                  <td> <a href="/zama-shop/admin/delete/category/<%= cat.id %>" class="btn btn-primary">Delete</a></td>
+                </tr>
+                <% sr++; }) %>
+                
+              </tbody>
+            </table>
+         </div>
+         </div>
+      </div>
+        
+      </div>
+      <!-- Wrapper END -->
+
+      <!-- Footer -->
+       <!-- <%- include('../partials/admin_footer') %> -->
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="/js/lottie.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="/js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+   </body>
+</html>

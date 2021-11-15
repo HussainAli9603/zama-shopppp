@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ZamaShops Admin Dashboard</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="/css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="/css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      
+   </head>
+   <body>
+      <!-- loader Start -->
+      
+      <!-- loader END -->
+      <!-- Wrapper Start -->
+      <div class="wrapper">
+         <!-- Sidebar  -->
+        <%- include('../partials/admin_sidebar') %>
+         <!-- TOP Nav Bar -->
+        <%- include('../partials/admin_header') %>
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+         <div id="content-page" class="content-page">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="iq-card">
+                        <div class="iq-card-body">
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div class="todo-date d-flex mr-3">Total Block  Users</div>
+                                 <div class="todo-notification d-flex align-items-center">
+                                    <div class=" position-relative d-flex align-items-center mr-3">
+                                       <form>
+                                          <div class="input-group ">
+                                             <input type="date" class="form-control mr-2" id="exampleInputdate" value="2019-12-18">
+                                             <input type="text" class="form-control w-100" name="search-user" placeholder="Product Name Or ID...!">
+                                             <input type="submit" class="btn btn-default border ml-2" value="Search">
+                                          </div>
+                                       </form>
+                                       <span class="bg-danger text-white"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% blockUsers.forEach(function(blocks){ %>
+                     <% if(blocks.block == "Block"){ %>
+                     <div class="col-lg-4">
+                        <div class="card iq-mb-3">
+                           <img src="/images/page-img/07.jpg" class="card-img-top" alt="#"> 
+                           <div class="card-body">
+                              <h4 class="card-title"><%= blocks.name %></h4>
+                              <li style="list-style-type: none;">Email : <b><%= blocks.email %></b></li>
+                              <li style="list-style-type: none;">Password : <b>*****************</b></li>
+                              <li style="list-style-type: none;">Location : <b><%= blocks.location %></b></li>
+                              <div class="mt-4">
+                                 <button class="card-link btn btn-info" data-toggle="modal" data-target="#exampleModal">User Details</button>
+                                 <a href="/zama-shop/admin/delete/user/<%= blocks.id %>" class="card-link btn btn-danger ">Delete</a>
+                                 <a href="/zama-shop/admin/in-active-user/<%= blocks.id %>" class="btn btn-danger  border btn-block mt-2">Inactive</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <% } %>
+                     <% }); %>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Wrapper END -->
+       <!-- when click the user details this model will call start -->
+         <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">User Profile</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <center> 
+                     <img src="images/page-img/12.jpg" class="  rounded-circle" alt="Responsive image">
+                     <div class="user-detail mt-4">
+                       <li style="list-style-type: none;">Name     : <b>Jack khan</b></li>
+                       <li style="list-style-type: none;">Password : <b>*************</b></li>
+                       <li style="list-style-type: none;">Location : <b>Swat</b></li>
+                       <li style="list-style-type: none;">Following : <b>10</b></li>
+                       <li style="list-style-type: none;">Followers : <b>3</b></li>
+                     </div>
+                  </center>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default border" data-dismiss="modal">OK</button>
+                     
+                </div>
+            </div>
+         </div>
+      </div>
+
+
+    <!-- when click the user details this model will call end-->
+
+      <!-- Footer -->
+       <%- include('../partials/admin_footer') %>
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="/js/lottie.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="/js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+   </body>
+</html>

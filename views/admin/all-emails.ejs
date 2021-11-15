@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>ZamaShops Admin Dashboard</title>
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="/images/favicon.ico" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+   <!-- Typography CSS -->
+   <link rel="stylesheet" href="/css/typography.css">
+   <!-- Style CSS -->
+   <link rel="stylesheet" href="/css/style.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="/css/responsive.css">
+
+
+</head>
+
+<body>
+   <!-- loader Start -->
+   <!-- loader END -->
+   <!-- Wrapper Start -->
+   <div class="wrapper">
+      <!-- Sidebar  -->
+        <%- include('../partials/admin_sidebar') %>
+         <!-- TOP Nav Bar -->
+        <%- include('../partials/admin_header') %>
+         <!-- TOP Nav Bar END -->
+      <!-- Page Content  -->
+      <div id="content-page" class="content-page">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="iq-card">
+                     <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                           <h4 class="card-title">User List</h4>
+                        </div>
+                     </div>
+                     <div class="iq-card-body">
+                        <div class="table-responsive">
+                           <div class="row justify-content-between">
+                              <div class="col-sm-12 col-md-6">
+                                 <div id="user_list_datatable_info" class="dataTables_filter">
+                                    <form class="mr-3 position-relative">
+                                       <div class="form-group mb-0">
+                                          <input type="search" class="form-control" id="exampleInputSearch"
+                                             placeholder="Search" aria-controls="user-list-table">
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12 col-md-6">
+                                 <div class="user-list-files d-flex float-right">
+                                    <button class="btn-primary"
+                                       style="padding-left: 15px; padding-right: 15px;border-radius: 5px;"
+                                       onclick="window.print()" class="chat-icon-phone">
+                                       User List Print
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                           <table id="user-list-table" class="table table-striped table-bordered mt-4" role="grid"
+                              aria-describedby="user-list-page-info">
+                              <thead>
+                                 <tr>
+                                    <th>Profile</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Join Date</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td class="text-center"><img class="rounded-circle img-fluid avatar-40"
+                                          src="images/user/09.jpg" alt="profile"></td>
+                                    <td>Bill Dabear</td>
+                                    <td>+55 2563 456 589</td>
+                                    <td>billdabear@gmail.com</td>
+                                    <td>Brazil</td>
+                                    <td><span class="badge iq-bg-primary">active</span></td>
+                                    <td>2019/12/01</td>
+                                 </tr>
+
+                                 <tr>
+                                    <td class="text-center"><img class="rounded-circle img-fluid avatar-40"
+                                          src="images/user/09.jpg" alt="profile"></td>
+                                    <td>Bill Dabear</td>
+                                    <td>+55 2563 456 589</td>
+                                    <td>billdabear@gmail.com</td>
+                                    <td>Brazil</td>
+                                    <td><span class="badge iq-bg-primary">active</span></td>
+                                    <td>2019/12/01</td>
+
+                                 </tr>
+
+                                 <tr>
+                                    <td class="text-center"><img class="rounded-circle img-fluid avatar-40"
+                                          src="images/user/09.jpg" alt="profile"></td>
+                                    <td>Bill Dabear</td>
+                                    <td>+55 2563 456 589</td>
+                                    <td>billdabear@gmail.com</td>
+                                    <td>Brazil</td>
+                                    <td><span class="badge iq-bg-primary">active</span></td>
+                                    <td>2019/12/01</td>
+                                 </tr>
+
+                                 <tr>
+                                    <td class="text-center"><img class="rounded-circle img-fluid avatar-40"
+                                          src="images/user/09.jpg" alt="profile"></td>
+                                    <td>Bill Dabear</td>
+                                    <td>+55 2563 456 589</td>
+                                    <td>billdabear@gmail.com</td>
+                                    <td>Brazil</td>
+                                    <td><span class="badge iq-bg-primary">active</span></td>
+                                    <td>2019/12/01</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="row justify-content-between mt-3">
+                           <div id="user-list-page-info" class="col-md-6">
+                              <span>Showing 1 to 5 of 5 entries</span>
+                           </div>
+                           <div class="col-md-6">
+                              <nav aria-label="Page navigation example">
+                                 <ul class="pagination justify-content-end mb-0">
+                                    <li class="page-item disabled">
+                                       <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                       <a class="page-link" href="#">Next</a>
+                                    </li>
+                                 </ul>
+                              </nav>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Wrapper END -->
+   <!-- when click the user details this model will call start -->
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">User Profile</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <center>
+                  <img src="images/page-img/12.jpg" class="  rounded-circle" alt="Responsive image">
+                  <div class="user-detail mt-4">
+                     <li style="list-style-type: none;">Name : <b>Jack khan</b></li>
+                     <li style="list-style-type: none;">Password : <b>*************</b></li>
+                     <li style="list-style-type: none;">Location : <b>Swat</b></li>
+                     <li style="list-style-type: none;">Following : <b>10</b></li>
+                     <li style="list-style-type: none;">Followers : <b>3</b></li>
+                  </div>
+               </center>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default border" data-dismiss="modal">OK</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- when click the user details this model will call end-->
+   <!-- Footer -->
+    <%- include('../partials/admin_footer') %>
+   <!-- Footer END -->
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="/js/jquery.min.js"></script>
+   <script src="/js/popper.min.js"></script>
+   <script src="/js/bootstrap.min.js"></script>
+   <!-- Appear JavaScript -->
+   <script src="/js/jquery.appear.js"></script>
+   <!-- Countdown JavaScript -->
+   <script src="/js/countdown.min.js"></script>
+   <!-- Counterup JavaScript -->
+   <script src="/js/waypoints.min.js"></script>
+   <script src="/js/jquery.counterup.min.js"></script>
+   <!-- Wow JavaScript -->
+   <script src="/js/wow.min.js"></script>
+   <!-- Apexcharts JavaScript -->
+   <script src="/js/apexcharts.js"></script>
+   <!-- Slick JavaScript -->
+   <script src="/js/slick.min.js"></script>
+   <!-- Select2 JavaScript -->
+   <script src="/js/select2.min.js"></script>
+   <!-- Owl Carousel JavaScript -->
+   <script src="/js/owl.carousel.min.js"></script>
+   <!-- Magnific Popup JavaScript -->
+   <script src="/js/jquery.magnific-popup.min.js"></script>
+   <!-- Smooth Scrollbar JavaScript -->
+   <script src="/js/smooth-scrollbar.js"></script>
+   <!-- lottie JavaScript -->
+   <script src="/js/lottie.js"></script>
+   <!-- Chart Custom JavaScript -->
+   <script src="/js/chart-custom.js"></script>
+   <!-- Custom JavaScript -->
+   <script src="/js/custom.js"></script>
+</body>
+
+</html>

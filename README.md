@@ -1,1 +1,1 @@
-# zama-shopppp
+# zama-shop

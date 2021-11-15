@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>ZamaShops Admin Dashboard</title>
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="/images/favicon.ico" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+   <!-- Typography CSS -->
+   <link rel="stylesheet" href="/css/typography.css">
+   <!-- Style CSS -->
+   <link rel="stylesheet" href="/css/style.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+<body>
+
+   <!-- Wrapper Start -->
+   <div class="wrapper">
+      <!-- Sidebar  -->
+      <%- include('../partials/admin_sidebar') %>
+         <!-- TOP Nav Bar -->
+         <%- include('../partials/admin_header') %>
+            <!-- TOP Nav Bar END -->
+            <!-- Page Content  -->
+            <div id="content-page" class="content-page">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height overflow-hidden">
+
+                           <!-- normal posts box -->
+                           <a href="abc.html">
+                              <div class="iq-card-body pb-0">
+                                 <div class="rounded-circle  iq-bg-primary"></div>
+                                 <span class="float-right line-height-6 font-weight-bold  h6 text-dark "
+                                    style="font-size:19px;margin-right:33px">Pending Normal</span>
+                                 <div class="clearfix"></div>
+                                 <div class="text-center">
+                                    <h2 class="mb-0"><span class="counter">
+                                          <%=pendingNormal %>
+                                       </span><span>K</span></h2>
+                                 </div>
+                              </div>
+                           </a>
+                           <div id="chart-4"></div>
+                        </div>
+                     </div>
+
+                     <!-- sponsored posts box -->
+
+                     <div class="col-md-6 col-lg-3">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height overflow-hidden">
+                           <a href="abc.html">
+                              <div class="iq-card-body pb-0">
+                                 <div class="rounded-circle  iq-bg-warning"></div>
+                                 <span class="float-right line-height-6 font-weight-bold text-dark"
+                                    style="font-size:19px;margin-right:16px">Pending Sponsored</span>
+                                 <div class="clearfix"></div>
+                                 <div class="text-center">
+                                    <h2 class="mb-0"><span>k</span><span class="counter">
+                                          <% if(pendingNormal.sponsored !="Go to Sponsored" ){ %>
+                                             <%= pendingNormal.length %>
+                                                <% } %>
+                                       </span></h2>
+
+                                 </div>
+                              </div>
+                           </a>
+                           <div id="chart-2"></div>
+                        </div>
+                     </div>
+
+                     <!-- pending normal posts box -->
+
+
+                     <div class="col-md-6 col-lg-3">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height overflow-hidden">
+                           <a href="abc.html">
+                              <div class="iq-card-body pb-0">
+                                 <div class="rounded-circle  iq-bg-success"></div>
+                                 <span class="float-right line-height-6 h6 mr-4 "
+                                    style="font-size:19px;color: green;">Approved Normal</span>
+                                 <div class="clearfix"></div>
+                                 <div class="text-center">
+                                    <h2 class="mb-0"><span class="counter">96.6</span><span>K</span></h2>
+                                 </div>
+                              </div>
+                           </a>
+                           <div id="chart-3"></div>
+                        </div>
+                     </div>
+                     <!-- panding sponsored posts box -->
+
+
+                     <div class="col-md-6 col-lg-3">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height overflow-hidden">
+                           <a href="">
+                              <div class="iq-card-body pb-0">
+                                 <div class="rounded-circle  iq-bg-danger"></div>
+                                 <span class="float-right line-height-6 h6 mr-3 "
+                                    style="font-size:18px;color:barkblue;">Approved Sponsored</span>
+                                 <div class="clearfix"></div>
+                                 <div class="text-center">
+                                    <h2 class="mb-0"><span class="counter">15.5</span><span>K</span></h2>
+
+                                 </div>
+                              </div>
+                           </a>
+                           <div id="chart-1"></div>
+                        </div>
+                     </div>
+                     <!-- End of posts box section -->
+
+
+                     <!-- Monthly post trend section -->
+                     <div class="col-lg-8">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height overflow-hidden">
+                           <div class="iq-card-header d-flex justify-content-between">
+                              <div class="iq-header-title">
+                                 <h4 class="card-title">Monthly Product Post trend </h4>
+                              </div>
+                              <div class="iq-card-header-toolbar d-flex align-items-center">
+                                 <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                       <a href="#" class="nav-link">Month</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+
+                           <div class="iq-card-body">
+                              <div class="d-flex justify-content-around">
+                                 <div class="price-week-box mr-5">
+                                    <span>Current Week</span>
+                                    <h2>$<span class="counter">180</span> <i
+                                          class="ri-funds-line text-success font-size-18"></i></h2>
+                                 </div>
+                                 <div class="price-week-box">
+                                    <span>Previous Week</span>
+                                    <h2>$<span class="counter">52.55</span><i
+                                          class="ri-funds-line text-danger font-size-18"></i></h2>
+                                 </div>
+                              </div>
+                           </div>
+                           <div id="chart-5"></div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height animation-card">
+                           <div class="iq-card-body p-0">
+                              <div class="an-text">
+                                 <span class="float-right line-height-6 h6 font-weight-bold text-dark"
+                                    style="margin-right: 60px;"> Sold Out Posts</span>
+                                 <h2 class="display-4 font-weight-bold">$<span>2M</span></h2>
+                              </div>
+                              <div class="an-img">
+                                 <div class="bodymovin" data-bm-path="images/small/data.json" data-bm-renderer="svg"
+                                    data-bm-loop="true"></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+   </div>
+   <!-- Wrapper END -->
+   <!-- Footer -->
+   <%- include('../partials/admin_footer') %>
+
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="/js/lottie.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="/js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+
+</body>
+
+</html>
