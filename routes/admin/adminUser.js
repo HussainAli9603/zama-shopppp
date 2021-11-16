@@ -78,11 +78,17 @@ router.get('/zama-shop/admin/normal-post', (req, res) => {
 router.get('/zama-shop/admin/active-post/:id', (req, res) => {
     adminUserScript.ActivePost(req, res);
 });
+router.get('/zama-shop/admin/in-active-post/:id', (req, res) => {
+    adminUserScript.InActivePost(req, res);
+});
 router.get('/zama-shop/admin/delete/post/:id', (req, res) => {
     adminUserScript.deletePost(req, res);
 });
 router.get('/zama-shop/admin/approve/post/:id', (req, res) => {
     adminUserScript.ApprovePost(req, res);
+});
+router.get('/zama-shop/admin/dis-approve/post/:id', (req, res) => {
+    adminUserScript.DisApprovePost(req, res);
 });
 router.get('/zama-shop/admin/sponsore/post/:id', (req, res) => {
     adminUserScript.SponsorPost(req, res);
@@ -142,12 +148,15 @@ router.post('/zama-shop/admin/change-sponsored-category-post', (req, res) => {
     adminUserScript.changeCategorySponsoredPost(req, res);
 });
 
+
+
 router.get('/zama-shop/admin/user-sms', (req, res) => {
     adminUserScript.GetUserSmsPage(req, res);
 });
 router.post('/zama-shop/admin/send-user-sms', (req, res) => {
     adminUserScript.CreateUserSms(req, res);
 });
+
 
 
 router.get('/zama-shop/admin/all-email', (req, res) => {
