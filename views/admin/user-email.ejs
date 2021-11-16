@@ -1,82 +1,95 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>ZamaShops Admin Dashboard</title>
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="/images/favicon.ico" />
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-      <!-- Typography CSS -->
-      <link rel="stylesheet" href="/css/typography.css">
-      <!-- Style CSS -->
-      <link rel="stylesheet" href="/css/style.css">
-      <!-- Responsive CSS -->
-      <link rel="stylesheet" href="/css/responsive.css">
 
-      
-   </head>
-   <body>
-      <!-- loader Start -->
-     
-      <!-- loader END -->
-      <!-- Wrapper Start -->
-      <div class="wrapper">
-          <!-- Sidebar  -->
-        <%- include('../partials/admin_sidebar') %>
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>ZamaShops Admin Dashboard</title>
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="/images/favicon.ico" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+   <!-- Typography CSS -->
+   <link rel="stylesheet" href="/css/typography.css">
+   <!-- Style CSS -->
+   <link rel="stylesheet" href="/css/style.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="/css/responsive.css">
+
+
+</head>
+
+<body>
+   <!-- loader Start -->
+
+   <!-- loader END -->
+   <!-- Wrapper Start -->
+   <div class="wrapper">
+      <!-- Sidebar  -->
+      <%- include('../partials/admin_sidebar') %>
          <!-- TOP Nav Bar -->
-        <%- include('../partials/admin_header') %>
-         <!-- TOP Nav Bar END -->
-         <!-- Page Content  -->
-         <div id="content-page" class="content-page">
-            <div class="container-fluid">
-                <div class="row row-eq-height">
-                  <div class="col-md-12">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <div class="iq-card iq-border-radius-20">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-md-12 mb-3">
-                                      <h5 class="text-primary card-title"><i class="ri-pencil-fill"></i> Compose Message</h5>
+         <%- include('../partials/admin_header') %>
+            <!-- TOP Nav Bar END -->
+            <!-- Page Content  -->
+            <div id="content-page" class="content-page">
+               <div class="container-fluid">
+                  <div class="row row-eq-height">
+                     <div class="col-md-12">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="iq-card iq-border-radius-20">
+                                 <div class="iq-card-body">
+                                    <div class="row">
+                                       <div class="col-md-12 mb-3">
+                                          <h5 class="text-primary card-title"><i class="ri-pencil-fill"></i> Compose
+                                             Message</h5>
+                                       </div>
                                     </div>
+                                    <form class="email-form" action="/zama-shop/admin/send-user-email" method="post">
+                                       <div class="form-group row">
+                                          <label for="inputEmail3" class="col-sm-2 col-form-label">To:</label>
+                                          <div class="col-sm-10">
+                                             <select id="" class="form-control" name="to">
+                                                <% userData.forEach(function(email){ %>
+                                                   <option value="<%= email.email %>">
+                                                      <%= email.email %>
+                                                   </option>
+                                                   <input type="hidden" value="<%= email.name %>" name="names"
+                                                      id="subject" class="form-control">
+                                                   <input type="hidden" value="<%= email.phone %>" name="phone"
+                                                      id="subject" class="form-control">
+                                                   <input type="hidden" value="<%= email.location %>" name="location"
+                                                      id="subject" class="form-control">
+                                                   <input type="hidden" value="<%= email.active %>" name="status"
+                                                      id="subject" class="form-control">
+                                                   <% }); %>
+                                             </select>
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group row">
+                                          <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
+                                          <div class="col-sm-10">
+                                             <input type="text" name="subject" id="subject" class="form-control">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="subject" class="col-sm-2 col-form-label">Your Message:</label>
+                                          <div class="col-md-10">
+                                             <textarea class="textarea form-control" name="message"
+                                                rows="5">Next, use our Get Started docs to setup Tiny!</textarea>
+                                          </div>
+                                       </div>
+                                       <div class="form-group row align-items-center">
+                                          <div class="d-flex flex-grow-1 align-items-center">
+                                             <div class="send-btn pl-3">
+                                                <input type="submit" class="btn btn-primary" value="Send">
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </form>
                                  </div>
-                                 <form class="email-form">
-                                    <div class="form-group row">
-                                       <label for="inputEmail3" class="col-sm-2 col-form-label">To:</label>
-                                       <div class="col-sm-10">
-                                          <select  id="" class="form-control">
-                                             <option selected>Enter Email</option>
-                                             <option value="Greta Life">Send To All users</option>
-                                             <option value="Bob Frapples">Bob@gmail.com</option>
-                                             <option value="Barb Ackue">Bar@gmail.com</option>
-                                             <option value="Greta Life">Greta@gmail.com</option> 
-                                          </select>
-                                       </div>
-                                    </div>
-                                      
-                                    <div class="form-group row">
-                                       <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
-                                       <div class="col-sm-10">
-                                          <input type="text"  id="subject" class="form-control">
-                                       </div>
-                                    </div>
-                                    <div class="form-group row">
-                                       <label for="subject" class="col-sm-2 col-form-label">Your Message:</label>
-                                       <div class="col-md-10">
-                                          <textarea class="textarea form-control" rows="5">Next, use our Get Started docs to setup Tiny!</textarea>
-                                       </div>
-                                    </div>
-                                    <div class="form-group row align-items-center">
-                                       <div class="d-flex flex-grow-1 align-items-center">
-                                          <div class="send-btn pl-3">
-                                             <button type="submit" class="btn btn-primary">Send</button>
-                                          </div> 
-                                       </div>
-                                    </div>
-                                 </form>
                               </div>
                            </div>
                         </div>
@@ -84,44 +97,44 @@
                   </div>
                </div>
             </div>
-         </div>
-      </div>
-      <!-- Wrapper END -->
-       <!-- when click the user details this model will call start -->
-         <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">User Profile</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               <div class="modal-body">
-                  <center>
-                     <img src="images/page-img/12.jpg" class="  rounded-circle" alt="Responsive image">
-                     <div class="user-detail mt-4">
-                       <li style="list-style-type: none;">Name     : <b>Jack khan</b></li>
-                       <li style="list-style-type: none;">Password : <b>*************</b></li>
-                       <li style="list-style-type: none;">Location : <b>Swat</b></li>
-                       <li style="list-style-type: none;">Following : <b>10</b></li>
-                       <li style="list-style-type: none;">Followers : <b>3</b></li>
-                     </div>
-                  </center>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default border" data-dismiss="modal">OK</button> 
-               </div>
+   </div>
+   <!-- Wrapper END -->
+   <!-- when click the user details this model will call start -->
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">User Profile</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <center>
+                  <img src="images/page-img/12.jpg" class="  rounded-circle" alt="Responsive image">
+                  <div class="user-detail mt-4">
+                     <li style="list-style-type: none;">Name : <b>Jack khan</b></li>
+                     <li style="list-style-type: none;">Password : <b>*************</b></li>
+                     <li style="list-style-type: none;">Location : <b>Swat</b></li>
+                     <li style="list-style-type: none;">Following : <b>10</b></li>
+                     <li style="list-style-type: none;">Followers : <b>3</b></li>
+                  </div>
+               </center>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default border" data-dismiss="modal">OK</button>
             </div>
          </div>
       </div>
+   </div>
 
 
-    <!-- when click the user details this model will call end-->
+   <!-- when click the user details this model will call end-->
 
-      <!-- Footer -->
-       <%- include('../partials/admin_footer') %>
+   <!-- Footer -->
+   <%- include('../partials/admin_footer') %>
       <!-- Footer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -155,7 +168,6 @@
       <script src="/js/chart-custom.js"></script>
       <!-- Custom JavaScript -->
       <script src="/js/custom.js"></script>
-   </body>
+</body>
+
 </html>
-
-
