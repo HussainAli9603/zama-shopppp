@@ -13,13 +13,14 @@ module.exports = {
       Promise.all([
         axios.get("http://localhost:3003/posts"),
       ]).then(([pendingNormal]) => {
-          res.render('admin/index', {
-            user: {
-              u_name: req.session.user.u_name
-            },
-            pendingNormal: pendingNormal.data
+        res.render('admin/index', {
+          user: {
+            u_name: req.session.user.u_name
+          },
+          pendingNormal: pendingNormal.data
 
-          });
+        })
+
       });
     } else {
       res.redirect('/zama-shop/login');
@@ -330,6 +331,32 @@ module.exports = {
     }
 
   },
+  InActivePost: async function (req, res) {
+    const id = req.params.id;
+    var activeUsers = await axios.get("http://localhost:3003/posts/" + id)
+    if (activeUsers) {
+      const newCategory = await axios.delete("http://localhost:3003/posts/" + id);
+      const activeUserss = await axios.post("http://localhost:3003/posts", {
+        id: id,
+        title: activeUsers.data.title,
+        price: activeUsers.data.price,
+        category: activeUsers.data.category,
+        subCategory: activeUsers.data.subCategory,
+        location: activeUsers.data.location,
+        description: activeUsers.data.description,
+        uploadDate: activeUsers.data.uploadDate,
+        expiryDate: activeUsers.data.expiryDate,
+        active: "Active",
+        status2: activeUsers.data.status2,
+        sponsored: activeUsers.data.sponsored
+      });
+
+      res.redirect('/zama-shop/admin/normal-post');
+    } else {
+      res.redirect('/zama-shop/admin/normal-post');
+    }
+
+  },
 
   deletePost: async function (req, res) {
     var id = req.params.id;
@@ -363,6 +390,33 @@ module.exports = {
     }
 
   },
+  DisApprovePost: async function (req, res) {
+    const id = req.params.id;
+    var activeUsers = await axios.get("http://localhost:3003/posts/" + id)
+    if (activeUsers) {
+      const newCategory = await axios.delete("http://localhost:3003/posts/" + id);
+      const activeUserss = await axios.post("http://localhost:3003/posts", {
+        id: id,
+        title: activeUsers.data.title,
+        price: activeUsers.data.price,
+        category: activeUsers.data.category,
+        subCategory: activeUsers.data.subCategory,
+        location: activeUsers.data.location,
+        description: activeUsers.data.description,
+        uploadDate: activeUsers.data.uploadDate,
+        expiryDate: activeUsers.data.expiryDate,
+        active: activeUsers.data.active,
+        status: "DisApproved",
+        status2: activeUsers.data.status2,
+        sponsored: activeUsers.data.sponsored
+      });
+
+      res.redirect('/zama-shop/admin/normal-post');
+    } else {
+      res.redirect('/zama-shop/admin/normal-post');
+    }
+
+  },
   SponsorPost: async function (req, res) {
     const id = req.params.id;
     var activeUsers = await axios.get("http://localhost:3003/posts/" + id)
@@ -381,7 +435,7 @@ module.exports = {
         active: activeUsers.data.active,
         status2: activeUsers.data.status2,
         status: activeUsers.data.status,
-        sponsored: "Go Normal"
+        sponsored: "Go to Sponsored"
       });
 
       res.redirect('/zama-shop/admin/normal-post');
@@ -458,7 +512,7 @@ module.exports = {
         active: activeUsers.data.active,
         status: activeUsers.data.status,
         status2: activeUsers.data.status2,
-        sponsored: "Go to Sponsored"
+        sponsored: "Go Normal"
       });
 
       res.redirect('/zama-shop/admin/all/sponsored/post');
@@ -715,11 +769,11 @@ module.exports = {
 
   },
 
-GetUserSmsPage: async function (req, res) {
+  GetUserSmsPage: async function (req, res) {
     if (req.session && req.session.user && req.session.user.u_name) {
-    const userData = await axios.get("http://localhost:3003/users");
-    res.render('admin/user-sms',{
-      userData:userData.data,
+      const userData = await axios.get("http://localhost:3003/users");
+      res.render('admin/user-sms', {
+        userData: userData.data,
         user: {
           u_name: req.session.user.u_name
         }
@@ -740,16 +794,19 @@ GetUserSmsPage: async function (req, res) {
     console.log(message)
     const userSms = await axios.post("http://localhost:3003/sendsms", {
       id: id,
-      to:to,
-      phone:phone,
-      subject:subject,
-      message:message
+      to: to,
+      phone: phone,
+      subject: subject,
+      message: message
     });
     res.redirect('/zama-shop/admin/user-sms');
   },
-  
-  
-    GetAllUserEmailPage: async function (req, res) {
+
+
+
+
+
+  GetAllUserEmailPage: async function (req, res) {
     if (req.session && req.session.user && req.session.user.u_name) {
       const allEmails = await axios.get("http://localhost:3003/sendemail");
       res.render('admin/all-emails', {
