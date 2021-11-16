@@ -494,6 +494,33 @@ module.exports = {
     }
 
   },
+  DisApproveSponsoredPost: async function (req, res) {
+    const id = req.params.id;
+    var activeUsers = await axios.get("http://localhost:3003/posts/" + id)
+    if (activeUsers) {
+      const newCategory = await axios.delete("http://localhost:3003/posts/" + id);
+      const activeUserss = await axios.post("http://localhost:3003/posts", {
+        id: id,
+        title: activeUsers.data.title,
+        price: activeUsers.data.price,
+        category: activeUsers.data.category,
+        subCategory: activeUsers.data.subCategory,
+        location: activeUsers.data.location,
+        description: activeUsers.data.description,
+        uploadDate: activeUsers.data.uploadDate,
+        expiryDate: activeUsers.data.expiryDate,
+        active: activeUsers.data.active,
+        status: "DisApproved",
+        status2: activeUsers.data.status2,
+        sponsored: activeUsers.data.sponsored
+      });
+
+      res.redirect('/zama-shop/admin/all/sponsored/post');
+    } else {
+      res.redirect('/zama-shop/admin/all/sponsored/post');
+    }
+
+  },
   SponsorSponsoredPost: async function (req, res) {
     const id = req.params.id;
     var activeUsers = await axios.get("http://localhost:3003/posts/" + id)
