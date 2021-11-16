@@ -150,6 +150,17 @@ router.post('/zama-shop/admin/send-user-sms', (req, res) => {
 });
 
 
+router.get('/zama-shop/admin/all-email', (req, res) => {
+    adminUserScript.GetAllUserEmailPage(req, res);
+});
+router.get('/zama-shop/admin/get-email-page', (req, res) => {
+    adminUserScript.GetUserEmailPage(req, res);
+});
+router.post('/zama-shop/admin/send-user-email', (req, res) => {
+    adminUserScript.CreateSendUserEmail(req, res);
+});
+
+
 module.exports = router;
 
 
