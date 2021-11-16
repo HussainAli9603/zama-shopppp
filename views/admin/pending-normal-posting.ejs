@@ -121,8 +121,13 @@
                                        <a href="/zama-shop/admin/pending-normal-post/<%= post.id %>"
                                           class="card-link btn btn-danger ">Delete</a>
                                        <hr>
-                                       <a href="/zama-shop/admin/pending-approve-normal-post/<%= post.id %>"
-                                          class=" btn btn-warning btn-success">Approve</a>
+                                       <% if(post.status=="DisApproved" ){ %>
+                                          <a href="/zama-shop/admin/pending-approve-normal-post/<%= post.id %>"
+                                             class=" btn btn-warning btn-success">Approve</a>
+                                          <% }else{ %>
+                                             <a href="/zama-shop/admin/pending-dis-approve-normal-post/<%= post.id %>"
+                                                class=" btn btn-warning btn-success">DisApprove</a>
+                                             <% } %>
                                        <a href="/zama-shop/admin/pending-sponsore-post/<%= post.id %>"
                                           class=" btn btn-secondary btn-secondary " style="margin-left: 35px;">Go
                                           To Sponsored</a>
