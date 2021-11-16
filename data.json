@@ -48,6 +48,18 @@
       "followers": 92,
       "active": "Active",
       "block": "Block"
+    },
+    {
+      "id": "332154",
+      "name": "USman khan",
+      "email": "user2@gmail.com",
+      "password": "user112",
+      "location": "islamabad",
+      "phone": "8787089",
+      "following": 40,
+      "followers": 52,
+      "active": "Active",
+      "block": "UnBlock"
     }
   ],
   "posts": [
@@ -61,7 +73,7 @@
       "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       "uploadDate": "2021-10-30",
       "expiryDate": "2021-10-30",
-      "active": "Active",
+      "active": "InActive",
       "status": "Approved",
       "status2": "Pending",
       "sponsored": "Go Normal"
@@ -77,7 +89,22 @@
       "uploadDate": "2021-10-30",
       "expiryDate": "2021-10-30",
       "active": "Active",
-      "status": "Approved",
+      "status": "DisApproved",
+      "status2": "Pending",
+      "sponsored": "Go to Sponsored"
+    },
+    {
+      "id": "23154",
+      "title": "Iphone 14 pro mix ",
+      "price": "45260",
+      "category": "phone",
+      "subCategory": "Iphone 13",
+      "location": "swat",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "uploadDate": "2021-10-30",
+      "expiryDate": "2021-10-30",
+      "active": "UnActive",
+      "status": "DisApproved",
       "status2": "Pending",
       "sponsored": "Go to Sponsored"
     }
