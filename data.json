@@ -43,6 +43,7 @@
       "email": "user@gmail.com",
       "password": "user11",
       "location": "islamabad",
+      "phone": "8787087098789",
       "following": 90,
       "followers": 92,
       "active": "Active",
@@ -79,6 +80,18 @@
       "status": "Approved",
       "status2": "Pending",
       "sponsored": "Go to Sponsored"
+    }
+  ],
+  "sendemail": [
+    {
+      "id": 16885,
+      "to": "user@gmail.com",
+      "name": "khan",
+      "location": "islamabad",
+      "phone": "8787087098789",
+      "status": "Active",
+      "subject": "sssds",
+      "message": "Next, use our Get Started docs to setup Tiny!"
     }
   ]
 }
