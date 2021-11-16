@@ -19,7 +19,7 @@ module.exports = {
             },
             pendingNormal: pendingNormal.data
 
-          }
+          });
       });
     } else {
       res.redirect('/zama-shop/login');
