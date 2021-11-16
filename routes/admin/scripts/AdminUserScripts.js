@@ -13,18 +13,13 @@ module.exports = {
       Promise.all([
         axios.get("http://localhost:3003/posts"),
       ]).then(([pendingNormal]) => {
-        console.log(pendingNormal.data)
-        if (pendingNormal.data.sponsored == " Go Normal") {
           res.render('admin/index', {
             user: {
               u_name: req.session.user.u_name
             },
             pendingNormal: pendingNormal.data
 
-          })
-        } else {
-          res.send("error")
-        }
+          }
       });
     } else {
       res.redirect('/zama-shop/login');
