@@ -91,7 +91,13 @@
                                 <a href="/zama-shop/admin/delete/post/sponsored/<%= spon.id %>" class="card-link btn btn-danger">Delete</a>
                                 <a href="/zama-shop/admin/sponsore/post/sponsored/<%= spon.id %>" class="card-link btn btn-primary">Go Normal</a>
                                 <hr>
-                                <a href="/zama-shop/admin/approve/post/sponsored/<%= spon.id %>" class=" btn btn-warning btn-block">DisApprove</a>
+                                 <% if(post.status=="DisApproved" ){ %>
+                                          <a href="/zama-shop/admin/approve/post/sponsored/<%= spon.id %>"
+                                             class=" btn btn-warning btn-block">Approve</a>
+                                          <% }else{ %>
+                                             <a href="/zama-shop/admin/dis-approve/post/sponsored/<%= spon.id %>"
+                                                class=" btn btn-warning btn-block">DisApprove</a>
+                                             <% } %>
                               </div>
                            </div>
                         </div>
