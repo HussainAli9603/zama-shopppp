@@ -105,6 +105,9 @@ router.get('/zama-shop/admin/delete/post/sponsored/:id', (req, res) => {
 router.get('/zama-shop/admin/approve/post/sponsored/:id', (req, res) => {
     adminUserScript.ApproveSponsoredPost(req, res);
 });
+router.get('/zama-shop/admin/dis-approve/post/sponsored/:id', (req, res) => {
+    adminUserScript.DisApproveSponsoredPost(req, res);
+});
 router.get('/zama-shop/admin/sponsore/post/sponsored/:id', (req, res) => {
     adminUserScript.SponsorSponsoredPost(req, res);
 });
