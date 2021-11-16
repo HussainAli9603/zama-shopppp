@@ -120,5 +120,14 @@
       "subject": "sssds",
       "message": "Next, use our Get Started docs to setup Tiny!"
     }
+  ],
+    "sendsms": [
+    {
+      "id": 16885,
+      "to": "user@gmail.com",
+      "phone": "8787087098789",
+      "subject": "sssds",
+      "message": "Next, use our Get Started docs to setup Tiny!"
+    }
   ]
 }
