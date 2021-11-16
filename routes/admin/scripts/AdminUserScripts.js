@@ -747,6 +747,58 @@ GetUserSmsPage: async function (req, res) {
     });
     res.redirect('/zama-shop/admin/user-sms');
   },
+  
+  
+    GetAllUserEmailPage: async function (req, res) {
+    if (req.session && req.session.user && req.session.user.u_name) {
+      const allEmails = await axios.get("http://localhost:3003/sendemail");
+      res.render('admin/all-emails', {
+        allEmails: allEmails.data,
+        user: {
+          u_name: req.session.user.u_name
+        }
+      });
+    } else {
+      res.redirect('/zama-shop/login');
+    }
+  },
+
+  GetUserEmailPage: async function (req, res) {
+    if (req.session && req.session.user && req.session.user.u_name) {
+      const userData = await axios.get("http://localhost:3003/users");
+      res.render('admin/user-email', {
+        userData: userData.data,
+        user: {
+          u_name: req.session.user.u_name
+        }
+      });
+    } else {
+      res.redirect('/zama-shop/login');
+    }
+  },
+  CreateSendUserEmail: async function (req, res) {
+    let idGen = await Math.floor(11000 + Math.random() * 19000);
+    var id = idGen;
+    var to = req.body.to;
+    var name = req.body.names;
+    var location = req.body.location;
+    var phone = req.body.phone;
+    var active = req.body.status;
+    var subject = req.body.subject;
+    var message = req.body.message;
+
+    const userSms = await axios.post("http://localhost:3003/sendemail", {
+      id: id,
+      to: to,
+      name: name,
+      location: location,
+      phone: phone,
+      status: active,
+      subject: subject,
+      message: message
+    });
+    res.redirect('/zama-shop/admin/get-email-page');
+  },
 
 
 
