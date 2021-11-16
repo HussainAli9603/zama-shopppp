@@ -74,9 +74,9 @@
       "uploadDate": "2021-10-30",
       "expiryDate": "2021-10-30",
       "active": "InActive",
-      "status": "Approved",
       "status2": "Pending",
-      "sponsored": "Go Normal"
+      "status": "Approved",
+      "sponsored": "Go to Sponsored"
     },
     {
       "id": "2253154",
@@ -103,10 +103,9 @@
       "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       "uploadDate": "2021-10-30",
       "expiryDate": "2021-10-30",
-      "active": "UnActive",
-      "status": "DisApproved",
+      "active": "InActive",
       "status2": "Pending",
-      "sponsored": "Go to Sponsored"
+      "sponsored": "Go Normal"
     }
   ],
   "sendemail": [
@@ -121,7 +120,7 @@
       "message": "Next, use our Get Started docs to setup Tiny!"
     }
   ],
-    "sendsms": [
+  "sendsms": [
     {
       "id": 16885,
       "to": "user@gmail.com",
